@@ -1,0 +1,188 @@
+﻿printf
+$stdio.h
+$int main ()
+{
+	printf("hello world");
+	return 0;
+}
+$모니터에 출력하는 함수
+$scanf
+$stdio.h
+$int main ()
+{
+	int a;
+	scanf("%d", &a);
+	return 0;
+}
+$int형 변수 a에 값 설정
+$abort
+$stdlib.h, progress.h
+$int main ()
+{
+	printf("abort terminate this program\n");
+	abort();
+	printf("this line is never reached\n");
+}
+$비정상적으로 프로그램을 종료하는 함수
+$abs
+$math.h, stdlib.h
+$int main()
+{
+	int i=-256;
+	printf("i is %d\n", i);
+	printf("abs(i) is %d\n", abs(i));
+}
+$정수의 절대값을 리턴하는 함수
+$access
+$io.h
+$int main()
+{
+	if(access("C:\\AUTOEXEC.BAT",0)==0)
+		printf("AUTOEXEC.BAT is exist\n");
+	else
+		printf("AUTOEXEC.BAT is not exist\n");
+}
+$파일의 존재 여부와 읽고 쓸 수 있는지에 대해 조사하는 함수
+$asctime
+$time.h
+$int main()
+{
+	struct tm t;
+	t.tm_sec	= 9; //초
+	t.tm_min	= 10;//분
+	t.tm_hour	= 31;//시간
+	t.tm_mday	= 18;//날짜
+	t.tm_mon	= 6; //달
+	t.tm_year	= 94;//년
+	t.tm_wday	= 4; //요일
+	t.tm_yday	= 0; //출력되지 않음
+	t.tm_isdst	= 0; //출력되지 않음
+	printf("%s", asctime(&t));
+}
+$tm형 구조체에 저장되어 있는 시간, 날짜에 관한 정보를 문자열로 바꾼다.
+$assert
+$assert.h
+$int main()
+{
+	int i;
+	for(;;)
+	{
+		printf("input a number:");
+		scanf("%d", &i);
+		assert(i!=0);
+		printf("10.0 / i = %f", 10./i);
+	}
+}
+$주석
+$atoi
+$stdlib.h
+$int main()
+{
+	int num;
+	char* str;
+	str = "-123";
+	num = atoi(str);
+	printf("inmteger is %d\n", num);
+}
+$문자열을 정수로 변환시키는 함수
+$calloc
+$alloc.h, stdlib.h
+$int main()
+{
+	int i ;
+	int* ar;
+	ar = (int *)calloc(10, sizedof(int)); // 동적 메모리 할당
+	if (ar==NULL)
+	{
+		printf("oupt of memory\n");
+		exit(0);
+	}
+	for (i=0;i<9;i++)
+	{
+		ar[i]=random(255);
+		printf("%d\n", ar[i]);
+	}
+	free(ar);
+}
+$동적으로 메모리를 할당하는 함수
+$ceil
+$math.h
+$int main()
+{
+	double pi=3.14;
+	double pi2=-3.14;
+	printf("pi=%.2f, ceil(pi)=%.2f\n", pi, ceil(pi));
+	printf("pi2=%.2f, ceil(pi2)=%.2f\n", pi2, ceil(pi2));
+}
+$인수 x를 올림하는 함수
+$clock
+$time.h
+$int main()
+{
+	int i,j=0;
+	clock_t start, end;
+	start = clock();
+	for (i=0;i<300;i++) clrscr();
+	end = clock();
+	printf("elapsed time is: %f\n", (end-start)/CLK_TCK);
+}
+$프로그램이 시작된 후 경과한 clock tick을 리턴하는 함수
+$delay
+$dos.h
+$int main()
+{
+	int i;
+	for (i=0;i<100;i++)
+	{
+		sound(500);
+		delay(30);
+		sound(700);
+		delay(30);
+	}
+	nosound();
+}
+$일정 시간 동안 시간을 끈다
+$difftime
+$time.h
+$int main()
+{
+	time_t first, second;
+	clrscr();
+	printf("press any key after some wait\n");
+	first = time(NULL);
+		getch();
+	second = time(NULL);
+	printf("wait time is:%f seconds\n", difftime(second, first));
+		getch();
+}
+$두 시간의 차를 구함
+$eof
+$io.h
+$int main()
+{
+		int handle;
+		char ch;
+		handle = open("c:\\autoexec.bat", 0_RDONLY);
+		lseek(handle, OL, SEEK_SET);
+		do
+		{
+				read(handle, &ch, 1);
+				printf("%c", ch);
+		} while (!eof(handle));
+		close(handdle);
+}
+$handle 이 지정하는 파일이 파일 끝에 도달했는지 조사한다.
+$
+dj 
+$pdj 
+$dj5427 
+$테스트 
+$djpark 
+$pdj 
+$time-t
+pakc
+erlkw
+		scanf
+ 
+$test! 
+$
